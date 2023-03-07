@@ -8,27 +8,25 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt"
-	"github.com/oauth2-proxy/mockoidc"
+	"github.com/project-zot/mockoidc"
 	"github.com/stretchr/testify/assert"
 )
 
 const (
 	audience   = "mockoidc"
-	issuer     = "https://github.com/oauth2-proxy/mockoidc/"
+	issuer     = "https://github.com/project-zot/mockoidc/"
 	defaultKid = "dHXTSCyouq6DiWaQwlXtNP54-C75mw3IcoYkERfl3fQ"
 )
 
-var (
-	standardClaims = &jwt.StandardClaims{
-		Audience:  audience,
-		ExpiresAt: time.Now().Add(time.Duration(1) * time.Hour).Unix(),
-		Id:        "0123456789abcdef",
-		IssuedAt:  time.Now().Unix(),
-		Issuer:    issuer,
-		NotBefore: 0,
-		Subject:   "123456789",
-	}
-)
+var standardClaims = &jwt.StandardClaims{
+	Audience:  audience,
+	ExpiresAt: time.Now().Add(time.Duration(1) * time.Hour).Unix(),
+	Id:        "0123456789abcdef",
+	IssuedAt:  time.Now().Unix(),
+	Issuer:    issuer,
+	NotBefore: 0,
+	Subject:   "123456789",
+}
 
 func TestDefaultKeypair(t *testing.T) {
 	keypair, err := mockoidc.DefaultKeypair()
