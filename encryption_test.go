@@ -8,14 +8,14 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/oauth2-proxy/mockoidc"
+	"github.com/project-zot/mockoidc"
 	"github.com/stretchr/testify/assert"
 )
 
 var audience = jwt.ClaimStrings{"mockoidc"}
 
 const (
-	issuer     = "https://github.com/oauth2-proxy/mockoidc/"
+	issuer     = "https://github.com/project-zot/mockoidc/"
 	defaultKid = "dHXTSCyouq6DiWaQwlXtNP54-C75mw3IcoYkERfl3fQ"
 )
 
