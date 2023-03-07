@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/oauth2-proxy/mockoidc"
+	"github.com/project-zot/mockoidc"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -326,8 +326,8 @@ func getJSON(res *httptest.ResponseRecorder, target interface{}) error {
 }
 
 func testResponse(t *testing.T, endpoint string, handler http.HandlerFunc,
-	method string, values url.Values) *httptest.ResponseRecorder {
-
+	method string, values url.Values,
+) *httptest.ResponseRecorder {
 	rr := httptest.NewRecorder()
 	req, err := http.NewRequest(method, endpoint, strings.NewReader(values.Encode()))
 	assert.NoError(t, err)
