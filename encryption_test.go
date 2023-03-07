@@ -8,13 +8,13 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt"
-	"github.com/oauth2-proxy/mockoidc"
+	"github.com/project-zot/mockoidc"
 	"github.com/stretchr/testify/assert"
 )
 
 const (
 	audience   = "mockoidc"
-	issuer     = "https://github.com/oauth2-proxy/mockoidc/"
+	issuer     = "https://github.com/project-zot/mockoidc/"
 	defaultKid = "dHXTSCyouq6DiWaQwlXtNP54-C75mw3IcoYkERfl3fQ"
 )
 
