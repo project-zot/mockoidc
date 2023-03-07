@@ -393,7 +393,7 @@ func (m *MockOIDC) JWKS(rw http.ResponseWriter, _ *http.Request) {
 func (m *MockOIDC) authorizeBearer(rw http.ResponseWriter, req *http.Request) (*jwt.Token, bool) {
 	header := req.Header.Get("Authorization")
 	parts := strings.SplitN(header, " ", 2)
-	if len(parts) < 2 || parts[0] != "Bearer" {
+	if len(parts) < 2 || strings.ToLower(parts[0]) != "bearer" {
 		errorResponse(rw, InvalidRequest, "Invalid authorization header",
 			http.StatusUnauthorized)
 		return nil, false
