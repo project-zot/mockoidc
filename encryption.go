@@ -11,8 +11,8 @@ import (
 	"errors"
 	"fmt"
 
+	"github.com/go-jose/go-jose/v3"
 	"github.com/golang-jwt/jwt"
-	"gopkg.in/square/go-jose.v2"
 )
 
 const (
